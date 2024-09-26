@@ -55,7 +55,7 @@ def calculadora():
         if continuar.lower() != 's':
           break
 
-      num2 = float(input("Escolha o segundo número (coloque zero se for raiz): "))
+      num2 = float(input("Escolha o segundo número: "))
 
       if escolha == '1':
         resultado = soma(num1,num2)
