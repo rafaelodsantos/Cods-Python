@@ -15,26 +15,26 @@ def jogo_da_forca():
     print(f'Tentativas: {tentativas}')
 
     letra=input('Digite uma letra: ').lower()
-    
-    if estado_palavra == palavra:
-      print('Parabéns você acertou a palavra!')
-      break
-
-    if letra in letra_advinhada:
-      print('Você já advinhou essa letra, tente novamente')
-      continue
-
-    letra_advinhada.append(letra)
-    print('Continue')
-
-    if letra not in letra_advinhada:
-      print('Letra incorreta, tente outra')
-      tentativas -= 1
-      continue
 
     if tentativas == 0:
       print(f'Você perdeu, a palavra era "{palavra}"')
       break
+    
+    if letra == palavra:
+      print(f'Parabéns você acertou a palavra!')
+      break
+
+    if letra in letra_advinhada:
+      print(f'Você já advinhou essa letra, tente novamente')
+      continue
+
+    letra_advinhada.append(letra)
+    print(f'Continue')
+
+    if letra not in palavra:
+      tentativas -= 1
+      print(f'Letra incorreta, tente outra')
+
 
 
 jogo_da_forca()
