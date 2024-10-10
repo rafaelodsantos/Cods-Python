@@ -35,8 +35,6 @@ def jogo_da_forca():
       tentativas -= 1
       print(f'Letra incorreta, tente outra')
 
-
-
 jogo_da_forca()
 
 
