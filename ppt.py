@@ -12,12 +12,20 @@ def ppt():
 }
 
   print('\nVamos jogar pedra papel e tesoura')
-  modo=input('1 - Casual\n2 - Melhor de\nEscolha o modo:')
+  modo=input('1 - Casual\n2 - Melhor de 5\nEscolha o modo:')
 
   if modo == '1':
+    
+    escolhas = ['pedra', 'papel', 'tesoura']
     chutepc = chute_pc()
-    escolhajg=input('Pedra, Papel ou Tesoura:')
 
+    while True:  #Loop infinito
+      escolhajg = input('Pedra, Papel ou Tesoura: ').lower()
+      if escolhajg in escolhas:
+        break  # Sai do loop 
+      else:
+        print('Digite Pedra, Papel ou Tesoura')
+            
     if escolhajg == chutepc:
       print(f'Empate! Ambos escolheram {escolhajg}')
   
@@ -29,16 +37,23 @@ def ppt():
     jogo=input('Deseja ir denvo? (s/n)')
     if jogo == 's':
       ppt()
+    
 
   elif modo == '2':
     placarjg = 0
     placarpc = 0
+    escolhas = ['pedra', 'papel', 'tesoura']
 
-    while placarjg or placarpc <= 3:
+    while placarjg < 3 or placarpc < 3:
       
       chutepc = chute_pc()
-      escolhajg=input('Pedra, Papel ou Tesoura:')
-
+      while True:  
+        escolhajg = input('Pedra, Papel ou Tesoura: ').lower()
+        if escolhajg in escolhas:
+          break 
+        else:
+          print('Digite Pedra, Papel ou Tesoura')
+     
       if escolhajg == chutepc:
         print(f'Empate! Ambos escolheram {escolhajg}')
         print(f'Jogador = {placarjg} / PC = {placarpc}')
@@ -53,9 +68,9 @@ def ppt():
         placarpc += 1
         print(f'Jogador = {placarjg} / PC = {placarpc}')
 
-    if placarjg or placarpc == 3:
-      jogo=input('Deseja ir denvo? (s/n)')
-      if jogo == 's':
-        ppt()
+      if placarjg == 3 or placarpc == 3:
+        jogo=input('Deseja ir denvo? (s/n)')
+        if jogo == 's':
+          ppt()
 
 ppt()
