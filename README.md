@@ -1,5 +1,7 @@
 ## Códigos de Estudo da Linguagem Python
 
+<p>Sempre gostei de jogos, então decicdi que uma ótima forma de aprender python seria fazendo alguns jogos</p>
+
 <h3>Em calculadora.py</h3>
 <p>Foi mu primeiro código em python e aprendi a mexer com as funções.</p>
 
